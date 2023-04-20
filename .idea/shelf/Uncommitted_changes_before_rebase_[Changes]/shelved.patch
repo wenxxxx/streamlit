@@ -1,0 +1,65 @@
+Index: main.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import pickle\r\nimport pandas as pd\r\nimport streamlit as st\r\nfrom bs4 import BeautifulSoup\r\nfrom sklearn.preprocessing import MultiLabelBinarizer\r\nfrom gensim.utils import simple_preprocess\r\nfrom nltk.corpus import stopwords\r\nimport tensorflow_hub as hub\r\n\r\n# Define the Streamlit app\r\nst.title('Stack Overflow Question Tagger')\r\n\r\n\r\n# Load the Universal Sentence Encoder\r\nuse = hub.load(\"https://tfhub.dev/google/universal-sentence-encoder/4\")\r\n\r\ny = [['android', 'c', 'c#', 'c++', 'css', 'html', 'ios', 'java', 'javascript', 'jquery', 'net', 'php', 'python', 'r']]\r\nmlb = MultiLabelBinarizer()\r\ny_ = mlb.fit_transform(y)\r\n\r\ntexte = st.text_area('Enter some text here')\r\n\r\nif st.button('Predict the text'):\r\n    soup = BeautifulSoup(texte, 'html.parser')\r\n    stop_words = set(stopwords.words('english'))\r\n    tokens = simple_preprocess(texte)\r\n    tokens = [token for token in tokens if token not in stop_words]\r\n    X = [\" \".join(tokens)]\r\n    X_emb = use(X)\r\n    # importer le modele\r\n    model = pickle.load(open('../pythonProject3/svc.pkl', 'rb'))\r\n    prediction = model.predict(X_emb)\r\n    tags = mlb.inverse_transform(prediction)\r\n    df_pred = pd.DataFrame(tags)\r\n    st.write(df_pred)\r\n\r\n\r\n# Afficher le widget de téléchargement de fichier\r\nfichier = st.file_uploader(\"Télécharger un fichier\")\r\n\r\nif st.button('Predict the file'):\r\n    st.write()\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/main.py b/main.py
+--- a/main.py	(revision c9746603edfa1acda72cd2ad68bfe8303f34fa2f)
++++ b/main.py	(date 1681990974016)
+@@ -10,7 +10,6 @@
+ # Define the Streamlit app
+ st.title('Stack Overflow Question Tagger')
+ 
+-
+ # Load the Universal Sentence Encoder
+ use = hub.load("https://tfhub.dev/google/universal-sentence-encoder/4")
+ 
+@@ -34,7 +33,6 @@
+     df_pred = pd.DataFrame(tags)
+     st.write(df_pred)
+ 
+-
+ # Afficher le widget de téléchargement de fichier
+ fichier = st.file_uploader("Télécharger un fichier")
+ 
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+deleted file mode 100644
+--- a/.idea/misc.xml	(revision c9746603edfa1acda72cd2ad68bfe8303f34fa2f)
++++ /dev/null	(revision c9746603edfa1acda72cd2ad68bfe8303f34fa2f)
+@@ -1,4 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.9" project-jdk-type="Python SDK" />
+-</project>
+\ No newline at end of file
+Index: .idea/streamlit.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module type=\"PYTHON_MODULE\" version=\"4\">\r\n  <component name=\"NewModuleRootManager\">\r\n    <content url=\"file://$MODULE_DIR$\" />\r\n    <orderEntry type=\"inheritedJdk\" />\r\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\r\n  </component>\r\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/streamlit.iml b/.idea/streamlit.iml
+--- a/.idea/streamlit.iml	(revision c9746603edfa1acda72cd2ad68bfe8303f34fa2f)
++++ b/.idea/streamlit.iml	(date 1681984614740)
+@@ -1,8 +1,10 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <module type="PYTHON_MODULE" version="4">
+   <component name="NewModuleRootManager">
+-    <content url="file://$MODULE_DIR$" />
+-    <orderEntry type="inheritedJdk" />
++    <content url="file://$MODULE_DIR$">
++      <excludeFolder url="file://$MODULE_DIR$/venv" />
++    </content>
++    <orderEntry type="jdk" jdkName="Python 3.9 (streamlit)" jdkType="Python SDK" />
+     <orderEntry type="sourceFolder" forTests="false" />
+   </component>
+ </module>
+\ No newline at end of file

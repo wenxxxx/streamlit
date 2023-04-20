@@ -1,19 +1,40 @@
 import pickle
-import streamlit as st
-import numpy as np
 import pandas as pd
-from bs4 import BeautifulSoup as bs
+import streamlit as st
+from bs4 import BeautifulSoup
 from sklearn.preprocessing import MultiLabelBinarizer
-from sklearn.model_selection import train_test_split
-from gensim.parsing.preprocessing import remove_stopwords
+from gensim.utils import simple_preprocess
+from nltk.corpus import stopwords
 import tensorflow_hub as hub
-import gensim
 
 # Define the Streamlit app
 st.title('Stack Overflow Question Tagger')
 
+# Load the Universal Sentence Encoder
+use = hub.load("https://tfhub.dev/google/universal-sentence-encoder/4")
+
+y = [['android', 'c', 'c#', 'c++', 'css', 'html', 'ios', 'java', 'javascript', 'jquery', 'net', 'php', 'python', 'r']]
+mlb = MultiLabelBinarizer()
+y_ = mlb.fit_transform(y)
+
+texte = st.text_area('Enter some text here')
+
+if st.button('Predict the text'):
+    soup = BeautifulSoup(texte, 'html.parser')
+    stop_words = set(stopwords.words('english'))
+    tokens = simple_preprocess(texte)
+    tokens = [token for token in tokens if token not in stop_words]
+    X = [" ".join(tokens)]
+    X_emb = use(X)
+    # importer le modele
+    model = pickle.load(open('../pythonProject3/svc.pkl', 'rb'))
+    prediction = model.predict(X_emb)
+    tags = mlb.inverse_transform(prediction)
+    df_pred = pd.DataFrame(tags)
+    st.write(df_pred)
+
 # Afficher le widget de téléchargement de fichier
 fichier = st.file_uploader("Télécharger un fichier")
 
-if fichier is None:
-    st.write('Please select un file:')
+if st.button('Predict the file'):
+    st.write()

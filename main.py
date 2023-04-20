@@ -21,8 +21,8 @@ texte = st.text_area('Enter some text here')
 
 if st.button('Predict the text'):
     soup = bs(texte, 'html.parser')
+    tokens = simple_preprocess(soup)
     stop_words = set(stopwords.words('english'))
-    tokens = simple_preprocess(texte)
     tokens = [token for token in tokens if token not in stop_words]
     X = [" ".join(tokens)]
     X_emb = use(X)

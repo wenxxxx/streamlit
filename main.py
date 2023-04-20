@@ -1,7 +1,7 @@
 import pickle
 import pandas as pd
 import streamlit as st
-from bs4 import BeautifulSoup as bs
+from bs4 import BeautifulSoup
 from sklearn.preprocessing import MultiLabelBinarizer
 from gensim.utils import simple_preprocess
 from nltk.corpus import stopwords
@@ -20,8 +20,8 @@ y_ = mlb.fit_transform(y)
 texte = st.text_area('Enter some text here')
 
 if st.button('Predict the text'):
-    soup = bs(texte, 'html.parser')
-    tokens = simple_preprocess(soup)
+    soup = BeautifulSoup(texte, 'html.parser')
+    tokens = simple_preprocess(texte)
     stop_words = set(stopwords.words('english'))
     tokens = [token for token in tokens if token not in stop_words]
     X = [" ".join(tokens)]

@@ -34,7 +34,7 @@ if st.button('Predict the text'):
     st.write(df_pred)
 
 # Afficher le widget de téléchargement de fichier
-fichier = st.file_uploader("Télécharger un fichier")
+#fichier = st.file_uploader("Télécharger un fichier")
 
-if st.button('Predict the file'):
-    st.write()
+#if st.button('Predict the file'):
+    #st.write()

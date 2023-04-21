@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5442042-9368-4a55-b83f-5329f07a255e" name="Changes" comment="venv" />
+    <list default="true" id="d5442042-9368-4a55-b83f-5329f07a255e" name="Changes" comment="streamlit1.20" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -92,34 +92,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1681841306308</updated>
-    </task>
-    <task id="LOCAL-00003" summary="change">
-      <created>1681911506495</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1681911506495</updated>
-    </task>
-    <task id="LOCAL-00004" summary="change">
-      <created>1681911615509</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1681911615509</updated>
-    </task>
-    <task id="LOCAL-00005" summary="change">
-      <created>1681911673791</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1681911673791</updated>
-    </task>
-    <task id="LOCAL-00006" summary="change">
-      <created>1681914486240</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1681914486240</updated>
     </task>
     <task id="LOCAL-00007" summary="change">
       <created>1681915139100</created>
@@ -436,7 +408,35 @@
       <option name="project" value="LOCAL" />
       <updated>1682104964793</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="venv">
+      <created>1682105379407</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1682105379407</updated>
+    </task>
+    <task id="LOCAL-00053" summary="streamlit1.20">
+      <created>1682105442544</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1682105442544</updated>
+    </task>
+    <task id="LOCAL-00054" summary="streamlit1.20">
+      <created>1682105484091</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1682105484091</updated>
+    </task>
+    <task id="LOCAL-00055" summary="streamlit1.20">
+      <created>1682105497984</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1682105497984</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -464,6 +464,7 @@
     <MESSAGE value="req.txt&#10;protobuf 3.19.6&#10;streamlit 1.17" />
     <MESSAGE value="files" />
     <MESSAGE value="venv" />
-    <option name="LAST_COMMIT_MESSAGE" value="venv" />
+    <MESSAGE value="streamlit1.20" />
+    <option name="LAST_COMMIT_MESSAGE" value="streamlit1.20" />
   </component>
 </project>

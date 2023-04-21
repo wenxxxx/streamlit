@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5442042-9368-4a55-b83f-5329f07a255e" name="Changes" comment="requirements.txt">
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="d5442042-9368-4a55-b83f-5329f07a255e" name="Changes" comment="reload from disc" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -199,7 +196,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682078342378</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="reload from disc">
+      <created>1682079469137</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1682079469137</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -218,6 +222,7 @@
     <MESSAGE value="change" />
     <MESSAGE value="soup" />
     <MESSAGE value="requirements.txt" />
-    <option name="LAST_COMMIT_MESSAGE" value="requirements.txt" />
+    <MESSAGE value="reload from disc" />
+    <option name="LAST_COMMIT_MESSAGE" value="reload from disc" />
   </component>
 </project>

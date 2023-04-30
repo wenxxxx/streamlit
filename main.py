@@ -7,7 +7,7 @@ from gensim.utils import simple_preprocess
 from nltk.corpus import stopwords
 import tensorflow_hub as hub
 import os
-os.environ['TF_ENABLE_MLIR_OPTIMIZATIONS'] = '1'
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 os.environ["STREAMLIT_USAGE_LOGGING"] = "0"
 
 # Define the Streamlit app

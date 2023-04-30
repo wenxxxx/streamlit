@@ -29,3 +29,4 @@ tensorflow-estimator==2.7.0
 tensorflow-hub==0.13.0
 tensorflow-intel==0.0.1
 tensorflow-io-gcs-filesystem==0.31.0
+browser.gatherUsageStats==False

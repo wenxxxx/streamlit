@@ -7,6 +7,7 @@ Keras-Preprocessing==1.1.2
 nltk==3.8.1
 numpy==1.23.5
 pandas==1.5.3
+pip==23.1.2
 Pillow==9.5.0
 protobuf<3.20,>=3.9.2
 Pygments==2.15.1

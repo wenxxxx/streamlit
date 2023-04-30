@@ -6,6 +6,8 @@ from sklearn.preprocessing import MultiLabelBinarizer
 from gensim.utils import simple_preprocess
 from nltk.corpus import stopwords
 import tensorflow_hub as hub
+import os
+os.environ['TF_ENABLE_MLIR_OPTIMIZATIONS'] = '1'
 
 # Define the Streamlit app
 st.title('Stack Overflow Question Tagger')
